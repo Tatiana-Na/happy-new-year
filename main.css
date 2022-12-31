@@ -9,5 +9,95 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+#open {
+    display: none;
+}
+
+.card {
+   position: relative; 
+   height: 300px;
+   width: 200px;
+   transform-style: preserve-3d;
+   transform: perspective(2500px);
+   transition: .3s;
+}
+
+.card-front {
+    background-color: brown;
+    position: relative;
+    height: 300px;
+   width: 200px;
+   overflow: hidden;
+   transform-origin: left;
+   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, .1);
+   transition: .3s;
+}
+
+.card-front:before {
+    content: "";
+    position: absolute;
+    height: 280px;
+    width: 180px;
+    background-color: aquamarine;
+    top: 10px;
+    left: 10px;
+}
+
+.tree {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 50px solid transparent;
+    border-left: 50px solid transparent;
+    border-bottom: 160px solid black;
+    top: 75px;
+    left: 50px;
+}
+
+.tree:after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 25px;
+    background-color: green;
+    top: 140px;
+    left: -50px;
+}
+
+.tree:before {
+    content: "";
+    position: absolute;
+    background-color: rgb(4, 71, 4);
+    width: 50px;
+    height: 25px;
+    top: 130px;
+    left: 20px;
+    box-shadow: -90px 0 rgb(4, 71, 4);
+}
+
+.card-inside {
+    position: absolute;
+    background-color: white;
+    height: 300px;
+    width: 200px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .2);
+}
+
+.card-inside:before {
+    content: "";
+    position: absolute;
+    height: 280px;
+    width: 180px;
+    background-color: blueviolet;
+    top: 10px;
+    left: 10px;
+}
+
+.open {
+    position: absolute;
 }
